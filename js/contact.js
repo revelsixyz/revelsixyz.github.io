@@ -1,29 +1,40 @@
-$("#contact-form").on("submit", function (e) {
-    e.preventDefault();
+const form = document.getElementById("contact-form");
+if (form) {
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    const $form = $(this);
-    const $btn = $form.find("button[type='submit']");
-    const buttonCopy = $btn.html();
+        const btn = form.querySelector('button[type="submit"]');
+        const original = btn ? btn.innerHTML : "";
+        const sending = btn?.dataset.sendingMessage || "Enviando...";
+        const ok = btn?.dataset.okMessage || "Enviado!";
+        const fail = btn?.dataset.errorMessage || "Error!";
 
-    $btn.prop("disabled", true).html("Sending...");
+        if (btn) { btn.disabled = true; btn.innerHTML = sending; }
 
-    $.ajax({
-        url: $form.attr("action"),
-        method: "POST",
-        data: $form.serialize(),
-        headers: { Accept: "application/json" } // important for many form backends with AJAX
-    })
-        .done(() => {
-            $btn.html("Enviado!");
-            $form[0].reset();
-        })
-        .fail((xhr) => {
-            console.error("Submit failed:", xhr.status, xhr.responseText);
-            $btn.html("Error!");
-        })
-        .always(() => {
+        try {
+            const data = new FormData(form);
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: data,
+                headers: { "Accept": "application/json" }
+            });
+
+            const json = await res.json().catch(() => null);
+
+            if (res.ok && json?.success) {
+                if (btn) btn.innerHTML = ok;
+                form.reset();
+            } else {
+                console.error("Web3Forms error:", res.status, json);
+                if (btn) btn.innerHTML = fail;
+            }
+        } catch (err) {
+            console.error(err);
+            if (btn) btn.innerHTML = fail;
+        } finally {
             setTimeout(() => {
-                $btn.prop("disabled", false).html(buttonCopy);
+                if (btn) { btn.disabled = false; btn.innerHTML = original; }
             }, 1500);
-        });
-});
+        }
+    });
+}

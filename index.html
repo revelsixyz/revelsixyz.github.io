@@ -361,67 +361,23 @@ CONTACT
                 </div>
             </div>
 
-            <style>
-                .contact-card {
-                    background: rgba(255, 255, 255, 0.92);
-                    padding: 18px 18px;
-                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-                    border: 1px solid rgba(0, 0, 0, 0.06);
-                }
-
-                .contact-card__title {
-                    margin: 0 0 12px;
-                    font-size: 20px;
-                    line-height: 1.2;
-                }
-
-                .contact-card__items {
-                    margin: 0;
-                    padding: 0;
-                    font-style: normal;
-                }
-
-                .contact-card__item {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    padding: 8px 0;
-                }
-
-                .contact-card__item i {
-                    width: 18px;
-                    text-align: center;
-                    opacity: 0.85;
-                }
-
-                .contact-card__item a {
-                    color: inherit;
-                    text-decoration: none;
-                    border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
-                }
-
-                .contact-card__item a:hover {
-                    border-bottom-color: rgba(0, 0, 0, 0.55);
-                }
-
-                /* Optional: make it breathe a bit on small screens */
-                @media (max-width: 767px) {
-                    .contact-card {
-                        margin-bottom: 14px;
-                    }
-                }
-            </style>
             <!--=== Contact Form ===-->
             <form id="contact-form"
                   class="col-sm-7 scrollimation fade-left"
                   action="https://api.web3forms.com/submit"
-                  method="POST"
-                  accept-charset="UTF-8">
+                  method="POST">
 
+                <!-- REQUIRED -->
                 <input type="hidden" name="access_key" value="e8b5b0f6-9fa7-42f4-b73d-775acb27535e">
-                <input type="hidden" name="subject" value="New contact from my website"/>
-                <input type="hidden" name="from_name" value="My GitHub Pages Site"/>
 
+                <!-- Optional but recommended -->
+                <input type="hidden" name="from_name" value="REVELSIX">
+                <input type="hidden" name="subject" value="Correo desde revelsixyz.github.io">
+                <!-- Redirect after success (optional) -->
+                <!-- <input type="hidden" name="redirect" value="https://tusitio.com/gracias.html"> -->
+
+                <!-- Anti-spam honeypot (recommended) -->
+                <input type="checkbox" name="botcheck" style="display:none">
 
                 <div class="form-group">
                     <label class="control-label" for="contact-name">Name</label>
@@ -453,19 +409,14 @@ CONTACT
                                   data-error-empty="Por favor introduzca su mensaje"></textarea>
                     </div>
                 </div>
-                <!-- Honeypot anti-spam -->
-                <div class="form-group">
-                    <label class="control-label" for="checkbox">
-                        <input id="checkbox" type="checkbox" name="botcheck" style="display:none"/>
-                    </label>
-                </div>
-                <div class="form-group">
+
+                <p>
                     <button type="submit" class="btn btn-theme btn-lg"
                             data-error-message="Error!"
                             data-sending-message="Enviando..." data-ok-message="Enviado!">
                         <i class="icon-location-arrow"></i>Enviar
                     </button>
-                </div>
+                </p>
             </form>
 
         </div><!-- End row -->
@@ -517,5 +468,55 @@ SCRIPTS
 <script src="js/jquery.backstretch.min.js"></script>
 <script src="js/contact.js"></script>
 <script src="js/designr.js"></script>
+<style>
+    .contact-card {
+        background: rgba(255, 255, 255, 0.92);
+        padding: 18px 18px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-card__title {
+        margin: 0 0 12px;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .contact-card__items {
+        margin: 0;
+        padding: 0;
+        font-style: normal;
+    }
+
+    .contact-card__item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 0;
+    }
+
+    .contact-card__item i {
+        width: 18px;
+        text-align: center;
+        opacity: 0.85;
+    }
+
+    .contact-card__item a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
+    }
+
+    .contact-card__item a:hover {
+        border-bottom-color: rgba(0, 0, 0, 0.55);
+    }
+
+    /* Optional: make it breathe a bit on small screens */
+    @media (max-width: 767px) {
+        .contact-card {
+            margin-bottom: 14px;
+        }
+    }
+</style>
 </body>
 </html>
