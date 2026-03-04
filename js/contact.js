@@ -14,12 +14,12 @@ $("#contact-form").on("submit", function (e) {
         headers: { Accept: "application/json" } // important for many form backends with AJAX
     })
         .done(() => {
-            $btn.html("Submitted!");
+            $btn.html("Enviado!");
             $form[0].reset();
         })
         .fail((xhr) => {
             console.error("Submit failed:", xhr.status, xhr.responseText);
-            $btn.html("Fail!");
+            $btn.html("Error!");
         })
         .always(() => {
             setTimeout(() => {
