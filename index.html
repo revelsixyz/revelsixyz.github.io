@@ -6,12 +6,25 @@
     Title and Meta Tags
     =============================================== -->
     <meta charset="utf-8">
-    <title>revelsix | Ingenieria de Software, Desarrollo, Analitica y Automatizacion</title>
+    <title>revelsix | Ingeniería de Software, Desarrollo, Analítica y Automatización</title>
 
     <meta name="description"
           content="Servicios de ingeniería de software: backend (Java/Spring Boot), integración (REST/SOAP/Kafka), cloud (Docker/Kubernetes) y analítica de datos (Power BI/Tableau/Qlik)."/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://revelsixyz.github.io/">
+    <meta property="og:title" content="revelsix | Ingeniería de Software, Desarrollo, Analítica y Automatización">
+    <meta property="og:description" content="Servicios de ingeniería de software: backend (Java/Spring Boot), integración (REST/SOAP/Kafka), cloud (Docker/Kubernetes) y analítica de datos (Power BI/Tableau/Qlik).">
+    <meta property="og:image" content="https://revelsixyz.github.io/assets/header-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="revelsix | Ingeniería de Software">
+    <meta name="twitter:description" content="Servicios de ingeniería de software: backend, integración, cloud y analítica de datos.">
+    <meta name="twitter:image" content="https://revelsixyz.github.io/assets/header-bg.jpg">
+
+    <link rel="canonical" href="https://revelsixyz.github.io/">
 
     <!-- ==============================================
     Favicons
@@ -23,14 +36,14 @@
     =============================================== -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-mfizz.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/designr-theme-dark.css">
 
     <!-- ==============================================
     Fonts
     =============================================== -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900"
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900&display=swap"
           rel="stylesheet" type="text/css">
 
     <!-- ==============================================
@@ -42,6 +55,75 @@
     <![endif]-->
 
     <script type="text/javascript" src="js/libs/modernizr.min.js"></script>
+
+    <style>
+        .contact-card {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 18px 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .contact-card__title {
+            margin: 0 0 12px;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        .contact-card__items {
+            margin: 0;
+            padding: 0;
+            font-style: normal;
+        }
+
+        .contact-card__item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+        }
+
+        .contact-card__item i {
+            width: 18px;
+            flex-shrink: 0;
+            text-align: center;
+            opacity: 0.85;
+        }
+
+        .contact-card__item i svg {
+            width: 18px;
+            height: 18px;
+            display: block;
+            fill: currentColor;
+        }
+
+        .contact-card__item a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
+        }
+
+        .contact-card__item a:hover {
+            border-bottom-color: rgba(0, 0, 0, 0.55);
+        }
+
+        .contact-card__item--tip {
+            padding-left: 28px;
+        }
+
+        @media (min-width: 768px) {
+            #contact .row {
+                display: flex;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .contact-card {
+                margin-bottom: 14px;
+            }
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target="#main-nav" data-offset="200">
@@ -54,7 +136,7 @@ MAIN NAV
 
         <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-nav">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-nav" aria-label="Abrir menú">
                 <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
 
@@ -122,15 +204,15 @@ SERVICES
 
     <div class="container">
 
-        <h1 class="section-title scrollimation scale-in">Servicios<i class="icon-wrench"></i></h1>
+        <h2 class="section-title scrollimation scale-in">Servicios<i class="icon-wrench"></i></h2>
 
 
         <div class="row services scrollimation fade-left">
-            <div class="col-md-3 text-center">
-                <a class="icon"><i class="icon-code"></i></a>
+            <div class="col-sm-6 col-md-3 text-center">
+                <span class="icon"><i class="icon-code"></i></span>
                 <h2>Desarrollo empresarial</h2>
             </div>
-            <div class="col-md-3 details">
+            <div class="col-sm-6 col-md-3 details">
                 <p>
                     Desarrollo y mantenimiento de <span style="color:black;">APIs y servicios críticos</span> con
                     Java/J2EE y Spring Boot.<br>
@@ -138,11 +220,11 @@ SERVICES
                 </p>
             </div>
 
-            <div class="col-md-3 text-center">
-                <a class="icon"><i class="icon-link"></i></a>
+            <div class="col-sm-6 col-md-3 text-center">
+                <span class="icon"><i class="icon-link"></i></span>
                 <h2>Integración de sistemas</h2>
             </div>
-            <div class="col-md-3 details">
+            <div class="col-sm-6 col-md-3 details">
                 <p>
                     Integración con sistemas internos y terceros usando <span style="color:black;">REST / SOAP</span> y
                     flujos event-driven (<span style="color:black;">Kafka</span>).<br>
@@ -159,22 +241,22 @@ SERVICES
         </div><!--End row -->
 
         <div class="row services bottom-row scrollimation fade-right">
-            <div class="col-md-3 text-center col-md-push-3">
+            <div class="col-sm-6 col-md-3 text-center col-md-push-3">
                 <h2>Cloud y DevOps</h2>
-                <a class="icon"><i class="icon-cloud"></i></a>
+                <span class="icon"><i class="icon-cloud"></i></span>
             </div>
-            <div class="col-md-3 details col-md-pull-3">
+            <div class="col-sm-6 col-md-3 details col-md-pull-3">
                 <p>
                     Despliegues y operación con <span style="color:black;">Linux, Docker y Kubernetes</span>.<br>
                     Automatización de entregas con <span style="color:black;">CI/CD</span>.
                 </p>
             </div>
 
-            <div class="col-md-3 text-center col-md-push-3">
+            <div class="col-sm-6 col-md-3 text-center col-md-push-3">
                 <h2>Analítica de datos &amp; BI</h2>
-                <a class="icon"><i class="icon-bar-chart"></i></a>
+                <span class="icon"><i class="icon-bar-chart"></i></span>
             </div>
-            <div class="col-md-3 details col-md-pull-3">
+            <div class="col-sm-6 col-md-3 details col-md-pull-3">
                 <p>
                     Tableros y reportes en <span style="color:black;">Power BI / Tableau / Qlik</span>.<br>
                     Métricas, estadísticas y modelos predictivos (según datos disponibles).
@@ -190,11 +272,11 @@ SERVICES
         </div><!--End row -->
 
         <div class="row services scrollimation fade-left">
-            <div class="col-md-3 text-center">
-                <a class="icon"><i class="icon-lock"></i></a>
+            <div class="col-sm-6 col-md-3 text-center">
+                <span class="icon"><i class="icon-lock"></i></span>
                 <h2>Datos sensibles &amp; auditoría</h2>
             </div>
-            <div class="col-md-3 details">
+            <div class="col-sm-6 col-md-3 details">
                 <p>
                     Experiencia en entornos regulados con <span
                         style="color:black;">datos financieros y personales</span>.<br>
@@ -202,11 +284,11 @@ SERVICES
                 </p>
             </div>
 
-            <div class="col-md-3 text-center">
-                <a class="icon"><i class="icon-file-text"></i></a>
+            <div class="col-sm-6 col-md-3 text-center">
+                <span class="icon"><i class="icon-file-text"></i></span>
                 <h2>Automatización de reportes</h2>
             </div>
-            <div class="col-md-3 details">
+            <div class="col-sm-6 col-md-3 details">
                 <p>
                     Generación de documentos <span
                         style="color:black;">consistentes, trazables y listos para auditoría </span>a partir de datos de
@@ -227,7 +309,7 @@ SKILLS
 
     <div class="container">
 
-        <h1 class="section-title scrollimation scale-in">Skills<i class="icon-align-justify"></i></h1>
+        <h2 class="section-title scrollimation scale-in">Skills<i class="icon-align-justify"></i></h2>
 
         <div class="row skills">
             <div class="col-sm-6 col-md-3 text-center">
@@ -286,7 +368,7 @@ ABOUT
 
                 <div class="row" style="margin-top:18px;">
                     <div class="col-sm-6">
-                        <h1 style="margin-top:0;">Qué hacemos?</h1>
+                        <h3 style="margin-top:0;">Qué hacemos?</h3>
                         <ul>
                             <li><strong>Backend:</strong> APIs y microservicios (Java/Spring Boot/Python).</li>
                             <li><strong>Integración:</strong> REST/SOAP, eventos (Kafka) y conectores con terceros.</li>
@@ -299,7 +381,7 @@ ABOUT
                     </div>
 
                     <div class="col-sm-6">
-                        <h1 style="margin-top:0;">Cómo trabajamos?</h1>
+                        <h3 style="margin-top:0;">Cómo trabajamos?</h3>
                         <ul>
                             <li><strong>1) Brief:</strong> objetivos, restricciones y plazos.</li>
                             <li><strong>2) Propuesta:</strong> alcance + estimación + plan.</li>
@@ -322,7 +404,7 @@ CONTACT
 <section id="contact">
 
     <div class="container">
-        <h1 class="section-title scrollimation scale-in" style="color: #ffffff !important">Contacto<i class="icon-phone-alt"></i></h1>
+        <h2 class="section-title scrollimation scale-in" style="color: #ffffff !important">Contacto<i class="icon-phone-alt"></i></h2>
         <div class="row">
             <div class="col-sm-5 contact-info scrollimation fade-right">
                 <div class="contact-card">
@@ -353,7 +435,7 @@ CONTACT
                                 Escríbenos por WhatsApp
                             </a>
                         </div>
-                        <div class="contact-card__item">
+                        <div class="contact-card__item contact-card__item--tip">
                             <strong>Tip:</strong> Para cotizar rápido, incluye: resumen, plazo, stack/infra, y
                             links/referencias.
                         </div>
@@ -377,12 +459,12 @@ CONTACT
                 <!-- <input type="hidden" name="redirect" value="https://tusitio.com/gracias.html"> -->
 
                 <!-- Anti-spam honeypot (recommended) -->
-                <label>
-                    <input type="checkbox" name="botcheck" style="display:none">
+                <label style="display:none">
+                    <input type="checkbox" name="botcheck">
                 </label>
 
                 <div class="form-group">
-                    <label class="control-label" for="contact-name">Name</label>
+                    <label class="control-label" for="contact-name">Nombre</label>
                     <div class="controls">
                         <i class="icon-user"></i>
                         <input id="contact-name" name="name" placeholder="Nombre"
@@ -392,7 +474,7 @@ CONTACT
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="contact-mail">Email</label>
+                    <label class="control-label" for="contact-mail">Correo</label>
                     <div class="controls">
                         <i class="icon-envelope"></i>
                         <input id="contact-mail" name="email" placeholder="Email"
@@ -403,7 +485,7 @@ CONTACT
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="contact-message">Message</label>
+                    <label class="control-label" for="contact-message">Mensaje</label>
                     <div class="controls">
                         <i class="icon-comment"></i>
                         <textarea id="contact-message" name="message" placeholder="Mensaje"
@@ -463,62 +545,10 @@ SCRIPTS
 <script src="js/libs/bootstrap.min.js"></script>
 <script src='js/jquery.scrollto.js'></script>
 <script src='js/jquery.flexslider.min.js'></script>
-<script src='js/twitterFetcher_v10_min.js'></script>
-<script src='js/jquery.masonry.min.js'></script>
 <script src="js/waypoints.min.js"></script>
 <script src="js/jquery.easypiechart.js"></script>
 <script src="js/jquery.backstretch.min.js"></script>
 <script src="js/contact.js"></script>
 <script src="js/designr.js"></script>
-<style>
-    .contact-card {
-        background: rgba(255, 255, 255, 0.92);
-        padding: 18px 18px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .contact-card__title {
-        margin: 0 0 12px;
-        font-size: 20px;
-        line-height: 1.2;
-    }
-
-    .contact-card__items {
-        margin: 0;
-        padding: 0;
-        font-style: normal;
-    }
-
-    .contact-card__item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px 0;
-    }
-
-    .contact-card__item i {
-        width: 18px;
-        text-align: center;
-        opacity: 0.85;
-    }
-
-    .contact-card__item a {
-        color: inherit;
-        text-decoration: none;
-        border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
-    }
-
-    .contact-card__item a:hover {
-        border-bottom-color: rgba(0, 0, 0, 0.55);
-    }
-
-    /* Optional: make it breathe a bit on small screens */
-    @media (max-width: 767px) {
-        .contact-card {
-            margin-bottom: 14px;
-        }
-    }
-</style>
 </body>
 </html>

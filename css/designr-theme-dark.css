@@ -52,7 +52,7 @@ h1 {
     letter-spacing:0.02em;
 }
 
-h1.section-title{
+h2.section-title{
     position:relative;
     margin:0 0 124px;
     font-size:48px;
@@ -520,7 +520,7 @@ header.jumbotron{
     padding:80px 0;
 }
 
-#about h1 {
+#about h3 {
     color:#fff;
     font-size:36px;
     line-height:42px;
@@ -1496,7 +1496,7 @@ header.jumbotron{
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
 #main-nav .navbar-brand{
     color:#21b799;
@@ -1569,7 +1569,7 @@ header.jumbotron{
 	width:100%;
 }
 
-h1.section-title{
+h2.section-title{
     font-size:42px;
     line-height:56px;
 }
@@ -1583,7 +1583,7 @@ h1.section-title{
     line-height:38px;
 }
 
-h1.section-title{
+h2.section-title{
     font-size:32px;
     line-height:46px;
 }
@@ -1599,7 +1599,7 @@ p {
 	font-size:18px;
 }
 
-#about h1 {
+#about h3 {
     font-size:28px;
     line-height:36px;
 }
