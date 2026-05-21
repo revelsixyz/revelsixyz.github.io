@@ -17,9 +17,10 @@
     background: url("../assets/favicon_r.png");
 }
 
-#main-nav a.ir-logo span{
-    color:transparent;
-    font:0/0 a;
+#main-nav a.ir-logo span {
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
 }
 
 .navbar {
@@ -209,7 +210,7 @@ body {
 #main-nav{
     background:transparent;
     color:#fff;
-    box-shadow:0 0 0px transparent;
+    box-shadow:0 0 0 transparent;
     -webkit-transition:background 0.3s ease-out;
     transition:background 0.3s ease-out;
 }
@@ -241,7 +242,7 @@ body {
 #main-nav .nav a,
 #main-nav .nav a:active,
 #main-nav .nav a:hover{
-    padding:0px 10px;
+    padding:0 10px;
     font-size:18px;
     line-height:54px;
     font-weight:400;
@@ -381,7 +382,7 @@ header.jumbotron{
 .jumbotron .right-col p{
     display:inline-block;
     margin:0;
-    padding:10px 30px 0px 50px;
+    padding:10px 30px 0 50px;
     font-size:60px;
     line-height:80px;
     font-weight:500;
@@ -460,8 +461,8 @@ header.jumbotron{
     background:#21b799;
     border-radius:50%;
     border:2px solid #21b799;
-	-webkit-box-sizing: content-box; 
-	-moz-box-sizing: content-box; 
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
 	box-sizing: content-box;
     top:-2px;
     left:-2px;
@@ -539,7 +540,7 @@ header.jumbotron{
 
 #about a:hover{
     text-decoration:underline;
-} 
+}
 
 #about .btn-theme.transparent {
     font-size:18px;
@@ -547,8 +548,8 @@ header.jumbotron{
 }
 
 #about img {
-    box-shadow:12px 0px 0px 12px rgba(255,255,255,0.2),
-                -12px 0px 0px 12px rgba(255,255,255,0.2);
+    box-shadow:12px 0 0 12px rgba(255,255,255,0.2),
+                -12px 0 0 12px rgba(255,255,255,0.2);
 }
 
 /*-----------------------
@@ -608,17 +609,198 @@ header.jumbotron{
 ------------------------*/
 
 #portfolio {
-    background:#fff;
+    background: #f5f5f5;
+    padding: 80px 0;
 }
 
 #portfolio .section-title {
-    color:#30695a;
-    font-weight:300;
-    margin-bottom:60px;
+    color: #21b799;
+    font-weight: 300;
+    margin-bottom: 60px;
 }
 
-#portfolio .section-title [class*=icon]{
-    color:#fff;
+#portfolio .section-title [class*=icon] {
+    color: #eee;
+}
+
+/* ---- Portfolio page layout ---- */
+
+#portfolio-hero {
+    padding: 120px 0 60px;
+    background: #fff;
+    text-align: center;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+#portfolio-hero h1 {
+    font-size: 52px;
+    font-weight: 300;
+    color: #21b799;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+}
+
+#portfolio-hero p {
+    color: #999;
+    font-size: 20px;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+#portfolio-filter {
+    background: #f5f5f5;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.filter-btn {
+    display: inline-block;
+    margin: 4px 6px;
+    padding: 6px 18px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    color: #777;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.2s;
+    letter-spacing: 0.03em;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #21b799;
+    border-color: #21b799;
+    color: #fff;
+}
+
+#portfolio-grid {
+    background: #f5f5f5;
+    padding: 60px 0 80px;
+}
+
+/* ---- Portfolio card component ---- */
+
+.portfolio-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.portfolio-card__thumb {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-card__thumb-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-card__thumb-bg {
+    transform: scale(1.04);
+}
+
+.portfolio-card__thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    z-index: 2;
+}
+
+.portfolio-card:hover .portfolio-card__thumb-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.portfolio-card__thumb-overlay a {
+    padding: 9px 22px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, color 0.2s;
+}
+
+.portfolio-card__thumb-overlay a:hover {
+    background: #21b799;
+    border-color: #21b799;
+    color: #fff;
+}
+
+.thumb-color-1 { background: linear-gradient(135deg, #21b799, #34b8ab, #1a8c74); }
+.thumb-color-2 { background: linear-gradient(135deg, #2c5364, #203a43, #0f2027); }
+.thumb-color-3 { background: linear-gradient(135deg, #1b4332, #2d6a4f, #40916c); }
+.thumb-color-4 { background: linear-gradient(135deg, #4a4e69, #9a8c98, #c9ada7); }
+.thumb-color-5 { background: linear-gradient(135deg, #21b799, #0f3460, #533483); }
+.thumb-color-6 { background: linear-gradient(135deg, #355c7d, #6c5b7b, #c06c84); }
+
+.thumb-icon {
+    position: relative;
+    z-index: 1;
+    font-size: 54px;
+    color: rgba(255,255,255,0.35);
+}
+
+.portfolio-card__body {
+    padding: 20px 22px 18px;
+}
+
+.portfolio-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #21b799;
+    margin: 0 0 6px;
+}
+
+.portfolio-card__desc {
+    font-size: 14px;
+    line-height: 21px;
+    color: #777;
+    margin: 0 0 14px;
+}
+
+.portfolio-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: #f0f0f0;
+    color: #666;
+    letter-spacing: 0.04em;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 767px) {
+    #portfolio-hero h1 { font-size: 36px; }
 }
 
 #portfolio-header {
@@ -756,7 +938,7 @@ header.jumbotron{
     top:0;
     left:0;
     background:transparent;
-    border:0px solid rgba(255,255,255,0.2);
+    border:0 solid rgba(255,255,255,0.2);
     -webkit-transition:border 0.3s ease-out;
     transition:border 0.3s ease-out;
 }
@@ -810,8 +992,8 @@ header.jumbotron{
       -ms-transition-duration: 0.7s;
        -o-transition-duration: 0.7s;
           transition-duration: 0.7s;
-          
-   transition-timing-function:ease-in-out;    
+
+   transition-timing-function:ease-in-out;
 }
 
 .masonry {
@@ -890,7 +1072,7 @@ header.jumbotron{
 .modal-header .close{
     font-size:42px;
     line-height:42px;
-    margin-top:0px;
+    margin-top:0;
     -webkit-transition:all 0.2s ease-out;
     transition:all 0.2s ease-out;
 }
@@ -932,7 +1114,7 @@ header.jumbotron{
 .modal-body .project-descr{
     color:#6a6a6a;
     margin:0 0 24px;
-    
+
 }
 
 .modal-body .btn-theme{
@@ -1078,7 +1260,7 @@ header.jumbotron{
 #contact {
     background:transparent;
     /*color:#fff;*/
-	padding:80px 0; 
+	padding:80px 0;
 }
 
 #contact .section-title {

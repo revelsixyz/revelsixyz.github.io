@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+
+    <meta charset="utf-8">
+    <title>revelsix | Portafolio de Proyectos</title>
+
+    <meta name="description"
+          content="Proyectos y sitios web desarrollados por revelsix: backend empresarial, integraciones, analítica de datos y automatización."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://revelsix.dev/portfolio.html">
+    <meta property="og:title" content="revelsix | Portafolio de Proyectos">
+    <meta property="og:description" content="Proyectos y sitios web desarrollados por revelsix.">
+    <meta property="og:image" content="https://revelsixyz.github.io/assets/header-bg.jpg">
+
+    <link rel="canonical" href="https://revelsix.dev/portfolio.html">
+    <link rel="icon" href="assets/favicon_r.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-mfizz.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/designr-theme-dark.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900&display=swap"
+          rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/libs/modernizr.min.js"></script>
+
+    <style>
+        /* Scrollimation base — designr.js adds .in on scroll, not available on inner pages without backstretch */
+        .scrollimation.fade-in  { opacity: 0; }
+        .scrollimation.scale-in { opacity: 0; transform: scale(0.9); }
+        .scrollimation.in       { opacity: 1 !important; transform: none !important; transition: opacity 0.6s ease, transform 0.6s ease; }
+    </style>
+</head>
+
+<body>
+
+<!-- MAIN NAV -->
+<div id="main-nav" class="navbar navbar-fixed-top">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-nav" aria-label="Abrir menú">
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><span>revel</span>six</a>
+        </div>
+
+        <div id="site-nav" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html#services">Servicios</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#about">Acerca de</a></li>
+                <li class="active"><a href="portfolio.html">Portafolio</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<!-- HERO -->
+<section id="portfolio-hero">
+    <div class="container">
+        <h1 class="scrollimation scale-in">Portafolio</h1>
+        <p class="scrollimation fade-in">Proyectos y sitios que hemos construido o en los que hemos participado.</p>
+    </div>
+</section>
+
+<!-- FILTER -->
+<div id="portfolio-filter">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="backend">Backend</button>
+    <button class="filter-btn" data-filter="data">Datos &amp; BI</button>
+    <button class="filter-btn" data-filter="integracion">Integración</button>
+</div>
+
+<!-- PORTFOLIO GRID -->
+<section id="portfolio-grid">
+    <div class="container">
+
+        <div class="row" id="cards-row">
+
+            <!-- Card 1 -->
+            <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="web backend">
+                <div class="portfolio-card">
+                    <div class="portfolio-card__thumb thumb-color-1">
+                        <div class="portfolio-card__thumb-bg"></div>
+                        <i class="icon-globe thumb-icon"></i>
+                        <div class="portfolio-card__thumb-overlay">
+                            <a href="#" target="_blank" rel="noreferrer">Ver sitio</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <h3 class="portfolio-card__title">Portal corporativo financiero</h3>
+                        <p class="portfolio-card__desc">Sitio institucional para una entidad financiera con integración a su core bancario para consulta de productos y tasas en tiempo real.</p>
+                        <div class="portfolio-card__tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">REST</span>
+                            <span class="tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="data">
+                <div class="portfolio-card">
+                    <div class="portfolio-card__thumb thumb-color-2">
+                        <div class="portfolio-card__thumb-bg"></div>
+                        <i class="icon-bar-chart thumb-icon"></i>
+                        <div class="portfolio-card__thumb-overlay">
+                            <a href="#" target="_blank" rel="noreferrer">Ver sitio</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <h3 class="portfolio-card__title">Dashboard de analítica comercial</h3>
+                        <p class="portfolio-card__desc">Tablero interactivo de KPIs de ventas y logística publicado en web con actualización automática desde la base de datos.</p>
+                        <div class="portfolio-card__tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="web">
+                <div class="portfolio-card">
+                    <div class="portfolio-card__thumb thumb-color-3">
+                        <div class="portfolio-card__thumb-bg"></div>
+                        <i class="icon-desktop thumb-icon"></i>
+                        <div class="portfolio-card__thumb-overlay">
+                            <a href="#" target="_blank" rel="noreferrer">Ver sitio</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <h3 class="portfolio-card__title">Landing page SaaS</h3>
+                        <p class="portfolio-card__desc">Sitio de aterrizaje para producto SaaS con formulario de captura de leads integrado a CRM y notificaciones automáticas por correo.</p>
+                        <div class="portfolio-card__tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">Bootstrap</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="backend integracion">
+                <div class="portfolio-card">
+                    <div class="portfolio-card__thumb thumb-color-4">
+                        <div class="portfolio-card__thumb-bg"></div>
+                        <i class="icon-random thumb-icon"></i>
+                        <div class="portfolio-card__thumb-overlay">
+                            <a href="#" target="_blank" rel="noreferrer">Ver sitio</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <h3 class="portfolio-card__title">Plataforma de pagos e-commerce</h3>
+                        <p class="portfolio-card__desc">Integración de pasarela de pagos en tienda en línea existente: flujo de checkout, webhooks de confirmación y conciliación automática.</p>
+                        <div class="portfolio-card__tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Kafka</span>
+                            <span class="tag">REST</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="data backend">
+                <div class="portfolio-card">
+                    <div class="portfolio-card__thumb thumb-color-5">
+                        <div class="portfolio-card__thumb-bg"></div>
+                        <i class="icon-file-text thumb-icon"></i>
+                        <div class="portfolio-card__thumb-overlay">
+                            <a href="#" target="_blank" rel="noreferrer">Ver sitio</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <h3 class="portfolio-card__title">Generador de reportes regulatorios</h3>
+                        <p class="portfolio-card__desc">Sistema web de generación y envío automático de reportes a ente regulador en formato PDF/Excel según calendario fiscal.</p>
+                        <div class="portfolio-card__tags">
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">iText PDF</span>
+                            <span class="tag">DB2</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="web integracion">
+                <div class="portfolio-card">
+                    <div class="portfolio-card__thumb thumb-color-6">
+                        <div class="portfolio-card__thumb-bg"></div>
+                        <i class="icon-tasks thumb-icon"></i>
+                        <div class="portfolio-card__thumb-overlay">
+                            <a href="#" target="_blank" rel="noreferrer">Ver sitio</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <h3 class="portfolio-card__title">Portal de gestión de trámites</h3>
+                        <p class="portfolio-card__desc">Portal self-service para que clientes inicien y hagan seguimiento de trámites, con integración a sistema legado vía SOAP y notificaciones SMS/email.</p>
+                        <div class="portfolio-card__tags">
+                            <span class="tag">Java EE</span>
+                            <span class="tag">SOAP</span>
+                            <span class="tag">Bootstrap</span>
+                            <span class="tag">Oracle DB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- End row -->
+
+        <div class="text-center" style="margin-top: 20px;">
+            <a href="index.html#contact" class="btn btn-theme btn-lg">
+                <i class="icon-location-arrow"></i> ¿Tienes un proyecto? Contáctanos
+            </a>
+        </div>
+
+    </div><!-- End container -->
+</section>
+
+<!-- FOOTER -->
+<footer id="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 left-col">
+                <h1 class="small-logo">
+                    <a href="index.html">revelsix</a><br>
+                    <span>Development • Data Analytics • Automation</span>
+                </h1>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#services">Servicios</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="portfolio.html">Portafolio</a></li>
+                    <li><a href="index.html#contact">Contacto</a></li>
+                </ul>
+                <p>&copy;Copyright 2026</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
+
+<script src="js/libs/bootstrap.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+
+<script>
+    $(function () {
+
+        // Scroll-triggered fade-in (matches designr.js pattern)
+        $('.scrollimation').waypoint(function () {
+            $(this).addClass('in');
+        }, { offset: '90%' });
+
+        // Filter buttons
+        var $items = $('.portfolio-item');
+
+        $('.filter-btn').on('click', function () {
+            var filter = $(this).data('filter');
+            $('.filter-btn').removeClass('active');
+            $(this).addClass('active');
+
+            if (filter === 'all') {
+                $items.show();
+            } else {
+                $items.each(function () {
+                    var cats = $(this).data('category') || '';
+                    $(this).toggle(cats.indexOf(filter) !== -1);
+                });
+            }
+        });
+
+        // Navbar scroll state
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#main-nav').addClass('scrolled');
+            } else {
+                $('#main-nav').removeClass('scrolled');
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>
