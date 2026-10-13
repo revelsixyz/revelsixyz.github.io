@@ -32,7 +32,7 @@ Single-page application with scroll-spy navigation. All content lives in `index.
 - jQuery 1.8.2 (CDN with local fallback in `js/libs/`)
 - Bootstrap 3 (`css/bootstrap.min.css`, `js/libs/bootstrap.min.js`)
 - Web3Forms for the contact form backend (no server needed)
-- Font Awesome + Font Mfizz for icons (local font files in `font/`)
+- Font Awesome for icons (local font files in `font/`)
 
 **Styling conventions:**
 - Primary accent color: `#21b799` (teal headings)

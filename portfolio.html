@@ -14,13 +14,12 @@
     <meta property="og:url" content="https://revelsix.dev/portfolio.html">
     <meta property="og:title" content="revelsix | Portafolio de Proyectos">
     <meta property="og:description" content="Proyectos y sitios web desarrollados por revelsix.">
-    <meta property="og:image" content="https://revelsixyz.github.io/assets/header-bg.jpg">
+    <meta property="og:image" content="https://revelsix.dev/assets/header-bg.jpg">
 
     <link rel="canonical" href="https://revelsix.dev/portfolio.html">
     <link rel="icon" href="assets/favicon_r.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-mfizz.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/designr-theme-dark.css">
 
@@ -286,6 +285,10 @@
                     $(this).toggle(cats.indexOf(filter) !== -1);
                 });
             }
+
+            // Cards moved after filtering; reveal visible ones and recompute waypoint offsets
+            $items.filter(':visible').addClass('in');
+            $.waypoints('refresh');
         });
 
         // Navbar scroll state
