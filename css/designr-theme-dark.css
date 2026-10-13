@@ -682,7 +682,37 @@ header.jumbotron{
 
 /* ---- Portfolio card component ---- */
 
+/* Equal-height cards per row: the column stretches and the card fills it */
+#portfolio .row,
+#cards-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#portfolio .row:before,
+#portfolio .row:after,
+#cards-row:before,
+#cards-row:after {
+    display: none;
+}
+
+#portfolio .row > [class*="col-"],
+#cards-row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 767px) {
+    #portfolio .row > [class*="col-"],
+    #cards-row > [class*="col-"] {
+        width: 100%;
+    }
+}
+
 .portfolio-card {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
     background: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
@@ -735,7 +765,9 @@ header.jumbotron{
     pointer-events: auto;
 }
 
-.portfolio-card__thumb-overlay a {
+.portfolio-card__thumb-overlay a,
+.portfolio-card__thumb-overlay button {
+    background: transparent;
     padding: 9px 22px;
     border: 2px solid #fff;
     color: #fff;
@@ -745,10 +777,42 @@ header.jumbotron{
     transition: background 0.2s, color 0.2s;
 }
 
-.portfolio-card__thumb-overlay a:hover {
+.portfolio-card__thumb-overlay a:hover,
+.portfolio-card__thumb-overlay button:hover {
     background: #21b799;
     border-color: #21b799;
     color: #fff;
+}
+
+[data-gallery] .portfolio-card__thumb {
+    cursor: pointer;
+}
+
+/* ---- Portfolio gallery modal ---- */
+
+.gallery-modal__img {
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+}
+
+.gallery-modal__caption {
+    margin: 14px 0 0;
+    text-align: center;
+    color: #777;
+}
+
+.gallery-modal__nav {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.gallery-modal__counter {
+    display: inline-block;
+    min-width: 70px;
+    color: #999;
 }
 
 .thumb-color-1 { background: linear-gradient(135deg, #21b799, #34b8ab, #1a8c74); }
@@ -766,6 +830,9 @@ header.jumbotron{
 }
 
 .portfolio-card__body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
     padding: 20px 22px 18px;
 }
 
@@ -784,6 +851,7 @@ header.jumbotron{
 }
 
 .portfolio-card__tags {
+    margin-top: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;

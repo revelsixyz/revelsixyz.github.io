@@ -85,6 +85,78 @@
 
         <div class="row" id="cards-row">
 
+            <!-- Taxi Tracker -->
+            <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="web integracion">
+                <div class="portfolio-card" data-gallery="taxi">
+                    <div class="portfolio-card__thumb thumb-color-1">
+                        <div class="portfolio-card__thumb-bg" style="background-image: url('assets/portfolio/taxi/01-consola-mapa.jpg');"></div>
+                        <div class="portfolio-card__thumb-overlay">
+                            <button type="button">Ver capturas</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <h3 class="portfolio-card__title">Taxi Tracker</h3>
+                        <p class="portfolio-card__desc">Plataforma web de seguimiento de taxis en tiempo real con mapa, portal para hoteles, consola central de administración e integración con WhatsApp. Desarrollada, desplegada y operada en servidor propio (Hetzner) con SSL.</p>
+                        <div class="portfolio-card__tags">
+                            <span class="tag">NestJS</span>
+                            <span class="tag">React</span>
+                            <span class="tag">PostGIS</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Mapa</span>
+                            <span class="tag">WhatsApp</span>
+                            <span class="tag">Panel admin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Riesgo crediticio -->
+            <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="backend data">
+                <div class="portfolio-card" data-gallery="riesgos">
+                    <div class="portfolio-card__thumb thumb-color-2">
+                        <div class="portfolio-card__thumb-bg" style="background-image: url('assets/portfolio/riesgos/01-bandeja.jpg');"></div>
+                        <div class="portfolio-card__thumb-overlay">
+                            <button type="button">Ver capturas</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <h3 class="portfolio-card__title">Asistente de evaluación de riesgo crediticio</h3>
+                        <p class="portfolio-card__desc">Prueba de concepto con IA, motor BPM (Camunda) y tablas de decisión editables; incluye documentación y manual de usuario.</p>
+                        <div class="portfolio-card__tags">
+                            <span class="tag">Java 21</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">Camunda</span>
+                            <span class="tag">DMN</span>
+                            <span class="tag">IA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chatbot WhatsApp -->
+            <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="web integracion">
+                <div class="portfolio-card" data-gallery="chatbot">
+                    <div class="portfolio-card__thumb thumb-color-3">
+                        <div class="portfolio-card__thumb-bg" style="background-image: url('assets/portfolio/chatbot/01-inicio.jpg');"></div>
+                        <div class="portfolio-card__thumb-overlay">
+                            <button type="button">Ver capturas</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-card__body">
+                        <h3 class="portfolio-card__title">Chatbot de WhatsApp con IA</h3>
+                        <p class="portfolio-card__desc">Plataforma SaaS multi-negocio: cada negocio (discoteca, ferretería, consultorio) tiene su chatbot con IA en WhatsApp y un panel para administrar sus datos.</p>
+                        <div class="portfolio-card__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">WhatsApp API</span>
+                            <span class="tag">IA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Card 1 -->
             <div class="col-sm-6 col-md-4 portfolio-item scrollimation fade-in" data-category="web backend">
                 <div class="portfolio-card">
@@ -232,6 +304,27 @@
     </div><!-- End container -->
 </section>
 
+<!-- GALLERY MODAL -->
+<div id="gallery-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gallery-modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">&times;</button>
+                <h4 id="gallery-modal-title" class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <img class="gallery-modal__img" src="" alt="">
+                <p class="gallery-modal__caption"></p>
+                <div class="gallery-modal__nav">
+                    <button type="button" class="btn btn-theme gallery-modal__prev" aria-label="Anterior"><i class="icon-chevron-left"></i></button>
+                    <span class="gallery-modal__counter"></span>
+                    <button type="button" class="btn btn-theme gallery-modal__next" aria-label="Siguiente"><i class="icon-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- FOOTER -->
 <footer id="main-footer">
     <div class="container">
@@ -259,6 +352,7 @@
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
 
 <script src="js/libs/bootstrap.min.js"></script>
+<script src="js/portfolio-gallery.js"></script>
 <script src="js/waypoints.min.js"></script>
 
 <script>
@@ -277,12 +371,13 @@
             $('.filter-btn').removeClass('active');
             $(this).addClass('active');
 
+            // Toggle Bootstrap's .hidden instead of show()/toggle(), which would set an inline display:block and break the flex layout of the cards
             if (filter === 'all') {
-                $items.show();
+                $items.removeClass('hidden');
             } else {
                 $items.each(function () {
                     var cats = $(this).data('category') || '';
-                    $(this).toggle(cats.indexOf(filter) !== -1);
+                    $(this).toggleClass('hidden', cats.indexOf(filter) === -1);
                 });
             }
 
